@@ -334,6 +334,7 @@ findMedicine.addEventListener('click', function(){
     character.hp += 5;
     hpCount.innerText = character.hp;
     upgrade.play();
+    findMedicine.style.display = 'none'
 })
 
 //Cooking aisle events

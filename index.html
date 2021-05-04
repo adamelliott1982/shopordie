@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop or Die</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- BEGIN TITLE SEQUENCE -->
+    <div id="title-container">
+        <h1 id="title">Shop or Die!!!</h1>
+        <button id="play">Play!</button>
+    </div>
+
+    <!-- BEGIN CHARACTER CREATION -->
+    <div id="character-creation">
+        <h1>Hello there sleepy head...</h1>
+        <p>What's your name?</p>
+        <div id="name-box">
+            <label id="name-label" for="character-name-field">Name your character:</label>
+            <input id="character-name-field" type="text">
+            <button id="accept-name-button">Accept</button>
+        </div>
+    </div>
+
+    <!-- BEGIN HUD CREATION -->
+    <div id="hp-container">
+        <h3>Health</h3>
+        <p id="hp-count"></p>
+    </div>
+
+    <div id="attack-container">
+        <h1 id="attack-h1">"Pow!!!  A direct hit!"</h1>
+        <p id="attack-text">"It seems a swift blow to the creature's skull will send it tumbling to the ground.  It stops moving, but you hit it once more just to be safe.  What was that thing?"</p>
+    </div>
+
+    <div id="damage-container">
+        <h1 id="damage-h1">You've been hit!</h1>
+        <p id="damage-text">The creature strikes you!  Either fight or run!!!</p>
+    </div>
+
+    <!-- BEGIN LEVEL CREATION -->
+    <!-- CITY -->
+    <div id="city-level">\
+        <div class="text-container" id="greeting-container">
+            <h1>Another Beautiful Day...</h1>
+            <p id="greeting-text"></p>
+            <div class="button-container" id="button-container-1">
+                <button id="check-news">Check the news...</button>
+                <button id="head-downstairs">Head downstairs...</button>
+            </div>
+        </div>
+    </div>
+    <!-- STREET -->
+    <div id="street-level">
+        <div class="level text-container" id="street-container">
+            <h1>Where is everyone?...</h1>
+            <p id="street-text">The street seems to be deserted.  Not a soul can be seen as you look down both ways of the street in front of your luxurious condominium.  That uneasy feeling you have intensifies...maybe you should go back to bed...</p>
+            <div class="button-container" id="button-container-2">
+                <button id="head-inside">Head back inside...</button>
+                <button id="head-grocery-store">Head to the grocery store...</button>
+            </div>
+        </div>
+    </div>
+    <!-- WALKING -->
+    <div id="walking-level">
+        <div class="text-container" id="walking-container">
+            <h1 id="walking-h1">Why is it so quiet?</h1>
+            <p id="walking-text">You see not a soul on the street on your way to the store, but you notice a distinct low pitched moan coming from an alleyway ahead of you on the left.  I wonder what it could be...</p>
+            <div class="button-container" id="button-container-3">
+                <button id="head-alley">Check out the alley...</button>
+                <button id="head-grocery-store-2">Proceed to the store...</button>
+            </div>
+        </div>
+    </div>
+    <!-- ALLEY -->
+    <div id="alley-level">
+        <div class="text-container" id="alley-container">
+            <h1 id="alley-h1">Zombie!!!</h1>
+            <p id="alley-text">There is an figure slowly lumbering towards you...moaning in an inhuman way.  As it slowly approaches you, a decision begins to slowly form in your head.  You can fight...or you can run...to the grocery store...</p>
+            <div class="button-container" id="button-container-4">
+                <button id="run">Run!</button>
+                <button class="attack" id="fight1">Fight!</button>
+                <button id="search-alley">Search alley...</button>
+            </div>
+        </div>
+        <div id="zombie-1-container">
+            <img id="zombie-1" src="./media/zombie1.png" alt="zombie1">
+        </div>
+    </div>
+    <!-- GROCERY OUTSIDE -->
+    <div id="grocery-outside-level">
+        <div class="text-container" id="grocery-outside-container">
+            <h1>You're here!</h1>
+            <p id="grocery-outside-text">As you approach the store's entrance, the feeling in the pit of your stomach cannot be ignored any longer.  You strain your ears but hear nothing...nothing outside at least...</p>
+            <div class="button-container" id="button-container-5">
+                <button id="head-home">Head home...</button>
+                <button id="enter-store">Enter store...</button>
+            </div>
+        </div>
+    </div>
+    <!-- GROCERY ENTRANCE -->
+    <div id="grocery-entrance-level">
+        <div class="text-container" id="grocery-entrance-container">
+            <h1>Let's get to scavenging!</h1>
+            <p id="grocery-entrance-text">The choices extend as far as the eye can see, and so does the danger.  You see barely human shapes roaming the aisles, they seem to be without direction...Be quick and collect what you can before any more of those things show up...</p>
+            <div class="button-container" id="button-container-6">
+                <button id="explore-pharmacy-1">Explore pharmacy aisle...</button>
+                <button id="leave-store-1">Leave Store...</button>
+                <button id="explore-cooking-1">Explore cooking aisle...</button>
+            </div>
+        </div>
+    </div>
+    <!-- PHARMACY -->
+    <div class="level" id="pharmacy-level">
+        <div class="text-container" id="pharmacy-container">
+            <h1 id="pharmacy-h1">Zombies!!!</h1>
+            <p id="pharmacy-text"></p>
+            <p id="find-medicine-text"></p>
+            <div class="button-container" id="button-container-7">
+                <button id="explore-cooking-2">Explore cooking aisle...</button>
+                <button id="leave-store-2">Leave Store...</button>
+                <button class="attack" id="fight2">Fight!</button>
+                <button id="find-medicine">Grab Medicine!</button>
+            </div>
+        </div>
+        <div id="zombie-3-container">
+            <img id="zombie-3" src="./media/zombie3.png" alt="zombie3">
+        </div>
+        <div id="zombie-2-container">
+            <img id="zombie-2" src="./media/zombie2.png" alt="zombie2">
+        </div>
+    </div>
+    <!-- COOKING -->
+    <div class="level" id="cooking-level">
+        <div class="text-container" id="cooking-container">
+            <h1>Empty?!?</h1>
+            <p id="pharmacy-text">You're too late.  The ailes are barren...wait...what's that?  You've spotted a single frying pan!  That looks perfect for bashing some zombie skulls!!!</p>
+            <p id="find-weapon-text"></p>
+            <div class="button-container" id="button-container-8">
+                <button id="explore-pharmacy-3">Explore pharmacy aisle...</button>
+                <button id="leave-store-3">Leave Store...</button>
+                <button id="find-weapon">Pick up frying pan!</button>
+                <button id="find-medicine">Grab medicine!</button>
+            </div>
+        </div>
+    </div>
+    <!-- COOKING -->
+    <div id="end-level">
+        <div class="text-container" id="end-container">
+            <h1>Scenario Complete!</h1>
+            <p>Amongst the garbage and the danger, you've managed to find the cutest kitten there ever was!  You scoop him up and name him Link, for he will be a link to the future.  A future free from zombies!...but first you feel like a nap.</p>
+            <p id="complete">Thanks for Playing!</p>
+        </div>
+    </div>
+
+
+
+
+
+    <div id="gameover-container">
+        <h1 id="gameover-h1">You are dead!</h1>
+        <p id="gameover-text">Try again?</p>
+        <div class="button-container" id="gameover-buttons">
+            <button id="try-again">Try Again...</button>
+            <button id="sayonara">Sayonara!</button>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

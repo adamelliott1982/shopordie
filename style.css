@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap');
+
+/* animations */
+@keyframes fade-in{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100;
+    }
+}
+@keyframes fade-out{
+    0%{
+        opacity: 100;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes black-maroon{
+    from{
+        background-color: black;
+    } to {
+        background-color: maroon;
+    }
+}
+@keyframes walk-towards{
+    from{
+        transform: scale(.75);
+    } to {
+        transform: scale(1);
+    };
+}
+@keyframes rocking{
+    0%{
+        transform: rotate(-5deg);
+    } 10% {
+        transform: rotate(5deg);
+    } 20% {
+        transform: rotate(-5deg);
+    } 30% {
+        transform: rotate(5deg);
+    } 40% {
+        transform: rotate(-5deg);
+    } 50% {
+        transform: rotate(5deg);
+    } 60% {
+        transform: rotate(-5deg);
+    } 70% {
+        transform: rotate(5deg);
+    } 80% {
+        transform: rotate(-5deg);
+    } 90% {
+        transform: rotate(5deg);
+    } 100% {
+        transform: rotate(0deg);
+    }
+}
+@keyframes rocking2{
+    0%{
+        transform: rotate(-5deg);
+    } 15% {
+        transform: rotate(5deg);
+    } 30% {
+        transform: rotate(-5deg);
+    } 45% {
+        transform: rotate(5deg);
+    } 60% {
+        transform: rotate(-5deg);
+    } 75% {
+        transform: rotate(5deg);
+    } 90% {
+        transform: rotate(-5deg);
+    } 100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Freckle Face', cursive;
+}
+
+body{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+}
+#hp-container{
+    position: fixed;
+    display: none;
+    color: white;
+    width: 75px;
+    height: 100px;
+    background: black;
+    z-index: 100;
+    top: 20px;
+    left: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#attack-container{
+    padding: 2em;
+    color: black;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    height: 30vh;
+    width: 80vw;
+    background-color: lightgrey;
+    z-index: 100;
+}
+#damage-container{
+    padding: 2em;
+    color: black;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid black;
+    height: 30vh;
+    width: 80vw;
+    background-color: maroon;
+    z-index: 100;
+}
+#damage-container h1, #attack-container h1{
+    font-size: 1rem;
+}
+
+#gameover-container{
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 50vh;
+    width: 100vw;
+    color: red;
+    background-color: black;
+    z-index: 100;
+}
+
+
+#title-container{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: black-maroon 5s forwards;
+    z-index: 100;
+}
+#title{
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+#play{
+    padding: 1em 2em;
+    z-index: 2;
+    opacity: 0;
+    animation: fade-in 5s ease 3s forwards;
+}
+#character-creation{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#character-name-field{
+    padding: .5em;
+}
+#name-box{
+    margin: 2em;
+    height: 40vh;
+    width: 50vw;
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.text-container{
+    height: 80vh;
+    width: 80vw;
+    padding: 2em;
+    background: rgba(211, 211, 211, 0.75);
+    position: relative;
+    text-align: center;
+    font-size: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.text-container p{
+    font-size: 1rem;
+    max-width: 60vw;
+    margin: auto;
+}
+.button-container{
+    display: flex;
+    justify-content: space-around;
+    opacity: 0;
+    width: 80%;
+}
+button{
+    font-size: 1rem;
+    cursor: pointer;
+    padding: .5em;
+}
+
+/* BEGIN LEVEL STYLING */
+
+#city-level{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./media/city.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+}
+
+#greeting-container p{
+    margin: auto;
+}
+
+
+#street-level{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./media/street-view.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+}
+
+#walking-level{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./media/walking-view.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#alley-level{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./media/alley.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#search-alley{
+    display: none;
+}
+
+
+#zombie-1-container{
+    animation: walk-towards 10s;
+    position: fixed;
+    bottom: -20%;
+    left: 35%;
+    z-index: -5;
+}
+
+#zombie-1{
+    height: 80vh;
+    position: fixed;
+    bottom: -20%;
+    animation: rocking 10s;
+    transform-origin: bottom;
+}
+#zombie-2-container{
+    height: 80vh;
+    animation: walk-towards 10s;
+    position: fixed;
+    bottom: 0;
+    left: 0%;
+    z-index: -5;
+}
+#zombie-2{
+    position: fixed;
+    animation: rocking2 10s;
+    transform-origin: bottom;
+}
+#zombie-3-container{
+    height: 80vh;
+    animation: walk-towards 10s;
+    position: fixed;
+    bottom: -20%;
+    left: 35%;
+    z-index: -5;
+}
+#zombie-3{
+    position: fixed;
+    animation: rocking 10s;
+    transform-origin: bottom;
+}
+
+
+
+#grocery-outside-level{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./media/grocery-outside.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#grocery-entrance-level{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./media/grocery-entrance.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#pharmacy-level{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./media/pharmacy.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#find-medicine{
+    display: none;
+}
+
+
+#cooking-level{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./media/cookware.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#end-level{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./media/ending.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

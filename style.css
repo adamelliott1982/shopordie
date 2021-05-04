@@ -150,7 +150,7 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 50vh;
+    height: 100vh;
     width: 100vw;
     color: red;
     background-color: black;
@@ -408,4 +408,17 @@ button{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+/* MEDIA QUERY ADJUSTMENTS */
+@media (min-width: 800px){
+    .text-container p{
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px){
+    .text-container p{
+        font-size: 2rem;
+    }
 }
